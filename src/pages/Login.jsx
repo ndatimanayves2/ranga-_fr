@@ -52,15 +52,15 @@ export default function Login() {
           <Link to="/" className="flex flex-col items-center gap-2">
             <img src={logo} alt="Ranga System" className="h-16 w-16 object-contain" />
             <span className="text-3xl font-extrabold text-yellow-600">
-              Ranga<span className="text-gray-800">System</span>
+              Ranga<span className="text-gray-800 dark:text-white">System</span>
             </span>
           </Link>
-          <p className="text-gray-500 mt-2 text-sm">Sign in to your account</p>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm">Sign in to your account</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Email Address</label>
             <div className="relative">
               <FiMail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
@@ -68,13 +68,13 @@ export default function Login() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="you@example.com"
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Password</label>
             <div className="relative">
               <FiLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
@@ -82,7 +82,7 @@ export default function Login() {
                 value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
                 placeholder="••••••••"
-                className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm"
+                className="w-full pl-10 pr-10 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400"
               />
               <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                 {showPass ? <FiEyeOff /> : <FiEye />}
@@ -99,12 +99,12 @@ export default function Login() {
           </button>
         </form>
 
-        <div className="mt-4 text-center text-sm text-gray-500">
+        <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
           Don't have an account?{" "}
           <Link to="/register" className="text-yellow-600 font-semibold hover:underline">Register</Link>
         </div>
 
-        <div className="mt-6 p-3 bg-yellow-50 rounded-xl text-xs text-yellow-700 text-center">
+        <div className="mt-6 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl text-xs text-yellow-700 dark:text-yellow-400 text-center">
           💡 Demo: Enter any email & password to try the app
         </div>
       </div>

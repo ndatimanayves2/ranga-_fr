@@ -37,15 +37,15 @@ export default function Register() {
           <Link to="/" className="flex flex-col items-center gap-2">
             <img src={logo} alt="Ranga System" className="h-16 w-16 object-contain" />
             <span className="text-3xl font-extrabold text-yellow-600">
-              Ranga<span className="text-gray-800">System</span>
+              Ranga<span className="text-gray-800 dark:text-white">System</span>
             </span>
           </Link>
-          <p className="text-gray-500 mt-2 text-sm">Create your free account</p>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm">Create your free account</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Full Name</label>
             <div className="relative">
               <FiUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
@@ -53,13 +53,13 @@ export default function Register() {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 placeholder="John Doe"
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Email Address</label>
             <div className="relative">
               <FiMail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
@@ -67,13 +67,13 @@ export default function Register() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="you@example.com"
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Password</label>
             <div className="relative">
               <FiLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
@@ -81,7 +81,7 @@ export default function Register() {
                 value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
                 placeholder="Min. 6 characters"
-                className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm"
+                className="w-full pl-10 pr-10 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400"
               />
               <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                 {showPass ? <FiEyeOff /> : <FiEye />}
@@ -90,7 +90,7 @@ export default function Register() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">I want to</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">I want to</label>
             <div className="grid grid-cols-2 gap-3">
               {["buyer", "seller"].map((role) => (
                 <button
@@ -99,8 +99,8 @@ export default function Register() {
                   onClick={() => setForm({ ...form, role })}
                   className={`py-3 rounded-xl border-2 font-medium text-sm capitalize transition ${
                     form.role === role
-                      ? "border-yellow-500 bg-yellow-50 text-yellow-600"
-                      : "border-gray-200 text-gray-600 hover:border-gray-300"
+                      ? "border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400"
+                      : "border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-500"
                   }`}
                 >
                   {role === "buyer" ? "🛒 Buy Products" : "🏪 Sell Products"}
@@ -118,7 +118,7 @@ export default function Register() {
           </button>
         </form>
 
-        <div className="mt-4 text-center text-sm text-gray-500">
+        <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
           Already have an account?{" "}
           <Link to="/login" className="text-yellow-600 font-semibold hover:underline">Sign In</Link>
         </div>

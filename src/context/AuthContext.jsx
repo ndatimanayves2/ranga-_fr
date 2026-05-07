@@ -9,7 +9,11 @@ const ADMIN_CREDENTIALS = {
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [token, setToken] = useState(() => {
+    const t = localStorage.getItem("token");
+    const isReal = t === "admin-token-secure-001" || (typeof t === "string" && t.split(".").length === 3);
+    return isReal ? t : null;
+  });
 
   // a real token is either the static admin token or a JWT (has 2 dots)
   const isRealToken = (t) =>
