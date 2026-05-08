@@ -51,7 +51,7 @@ const ImageCapture = ({ value, onChange }) => {
         </button>
         <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleFile} />
       </div>
-      <input type="url" value={preview.startsWith("data:") ? "" : preview} onChange={handleUrl} placeholder="Or paste image URL" className="w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+      <input type="url" value={preview.startsWith("data:") ? "" : preview} onChange={handleUrl} placeholder="Or paste image URL" className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400" />
     </div>
   );
 };
@@ -69,7 +69,7 @@ export default function SellerDashboard() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
-  const inputClass = "w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500";
+  const inputClass = "w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400";
 
   useEffect(() => {
     const init = async () => {
@@ -199,30 +199,30 @@ export default function SellerDashboard() {
           <h2 className="text-lg font-bold text-gray-800 dark:text-white mb-4">🏪 {shop ? "Edit Shop" : "Create Shop"}</h2>
           <form onSubmit={saveShop} className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Shop Name *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Shop Name *</label>
               <input type="text" value={shopForm.name} onChange={(e) => setShopForm({ ...shopForm, name: e.target.value })} placeholder="My Shop" className={inputClass} />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Phone</label>
               <div className="relative"><FiPhone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
                 <input type="tel" value={shopForm.phone} onChange={(e) => setShopForm({ ...shopForm, phone: e.target.value })} placeholder="0780000000" className={`${inputClass} pl-9`} />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Location</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Location</label>
               <div className="relative"><FiMapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
                 <input type="text" value={shopForm.location} onChange={(e) => setShopForm({ ...shopForm, location: e.target.value })} placeholder="Kigali, Rwanda" className={`${inputClass} pl-9`} />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Description</label>
               <input type="text" value={shopForm.description} onChange={(e) => setShopForm({ ...shopForm, description: e.target.value })} placeholder="About your shop" className={inputClass} />
             </div>
             <div className="md:col-span-2 flex gap-3">
               <button type="submit" disabled={saving} className="bg-yellow-500 text-white px-8 py-2.5 rounded-xl font-semibold hover:bg-yellow-600 transition disabled:opacity-60">
                 {saving ? "Saving..." : shop ? "Update Shop" : "Create Shop"}
               </button>
-              <button type="button" onClick={() => setShowShopForm(false)} className="px-6 py-2.5 border border-gray-300 rounded-xl text-gray-600 hover:bg-gray-50 transition">Cancel</button>
+              <button type="button" onClick={() => setShowShopForm(false)} className="px-6 py-2.5 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition">Cancel</button>
             </div>
           </form>
         </div>
@@ -236,9 +236,9 @@ export default function SellerDashboard() {
           { label: "Active", value: products.filter((p) => p.status === "available").length, icon: FiCheck, color: "bg-purple-50 text-purple-600" },
           { label: "Out of Stock", value: products.filter((p) => p.status === "out_of_stock").length, icon: FiPackage, color: "bg-orange-50 text-orange-600" },
         ].map(({ label, value, icon: Icon, color }) => (
-          <div key={label} className="bg-white rounded-xl shadow-sm p-4 flex items-center gap-3">
+          <div key={label} className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 flex items-center gap-3">
             <div className={`${color} p-3 rounded-xl`}><Icon size={18} /></div>
-            <div><p className="text-xs text-gray-500">{label}</p><p className="text-xl font-bold text-gray-800">{value}</p></div>
+            <div><p className="text-xs text-gray-500 dark:text-gray-400">{label}</p><p className="text-xl font-bold text-gray-800 dark:text-white">{value}</p></div>
           </div>
         ))}
       </div>
@@ -249,26 +249,26 @@ export default function SellerDashboard() {
           <h2 className="text-lg font-bold text-gray-800 dark:text-white mb-5">{editId ? "Edit Product" : "Add New Product"}</h2>
           <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Product Name *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Product Name *</label>
               <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="e.g. iPhone 15 Pro" className={inputClass} />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Price ($) *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Price ($) *</label>
               <input type="number" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} placeholder="0.00" min="0" step="0.01" className={inputClass} />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Category</label>
               <select value={form.categoryId} onChange={(e) => setForm({ ...form, categoryId: e.target.value })} className={inputClass}>
                 <option value="">Select category</option>
                 {categories.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Stock</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Stock</label>
               <input type="number" value={form.stock || ""} onChange={(e) => setForm({ ...form, stock: e.target.value })} placeholder="0" min="0" className={inputClass} />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Description</label>
               <input type="text" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Short product description" className={inputClass} />
             </div>
             <ImageCapture value={typeof form.images === "string" ? form.images : (form.images?.[0] || "")} onChange={(val) => setForm({ ...form, images: val })} />
@@ -276,7 +276,7 @@ export default function SellerDashboard() {
               <button type="submit" disabled={saving} className="bg-yellow-500 text-white px-8 py-2.5 rounded-xl font-semibold hover:bg-yellow-600 transition disabled:opacity-60">
                 {saving ? "Saving..." : editId ? "Update" : "Add Product"}
               </button>
-              <button type="button" onClick={() => { setShowForm(false); setForm(EMPTY_FORM); setEditId(null); }} className="px-6 py-2.5 border border-gray-300 rounded-xl text-gray-600 hover:bg-gray-50 transition">Cancel</button>
+              <button type="button" onClick={() => { setShowForm(false); setForm(EMPTY_FORM); setEditId(null); }} className="px-6 py-2.5 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition">Cancel</button>
             </div>
           </form>
         </div>
@@ -305,7 +305,7 @@ export default function SellerDashboard() {
                   <th className="px-5 py-3 text-left">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-50">
+              <tbody className="divide-y divide-gray-50 dark:divide-gray-700">
                 {products.map((p) => {
                   const pid = p.id || p._id;
                   const name = p.name || p.title;

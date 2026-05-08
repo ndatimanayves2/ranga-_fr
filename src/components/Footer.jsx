@@ -11,38 +11,38 @@ const GISUBIZO_EMAIL = "gisubizojeanclaude199@gmail.com";
 // Contact modal ya Gisubizo Ltd
 const ContactModal = ({ onClose }) => (
   <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4" onClick={onClose}>
-    <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-sm w-full" onClick={(e) => e.stopPropagation()}>
+    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 max-w-sm w-full" onClick={(e) => e.stopPropagation()}>
       <div className="flex items-center justify-between mb-5">
         <div>
-          <h3 className="text-lg font-extrabold text-gray-900">Gisubizo Ltd</h3>
+          <h3 className="text-lg font-extrabold text-gray-900 dark:text-white">Gisubizo Ltd</h3>
           <p className="text-xs text-yellow-600 font-medium">Software Development Company</p>
         </div>
-        <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full transition">
-          <FiX size={18} />
+        <button onClick={onClose} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition">
+          <FiX size={18} className="text-gray-600 dark:text-gray-300" />
         </button>
       </div>
 
       <div className="space-y-3 mb-5">
-        <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
-          <div className="w-9 h-9 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+        <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-xl">
+          <div className="w-9 h-9 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center flex-shrink-0">
             <FiPhone size={16} className="text-yellow-600" />
           </div>
           <div>
-            <p className="text-xs text-gray-500">Telefoni</p>
-            <p className="font-semibold text-gray-800">{GISUBIZO_PHONE}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">Telefoni</p>
+            <p className="font-semibold text-gray-800 dark:text-white">{GISUBIZO_PHONE}</p>
           </div>
           <a href={`tel:${GISUBIZO_PHONE}`} className="ml-auto bg-yellow-500 text-white text-xs px-3 py-1.5 rounded-lg hover:bg-yellow-600 transition font-medium">
             Hamagara
           </a>
         </div>
 
-        <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
-          <div className="w-9 h-9 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+        <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-xl">
+          <div className="w-9 h-9 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0">
             <FaWhatsapp size={16} className="text-green-600" />
           </div>
           <div>
-            <p className="text-xs text-gray-500">WhatsApp</p>
-            <p className="font-semibold text-gray-800">{GISUBIZO_PHONE}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">WhatsApp</p>
+            <p className="font-semibold text-gray-800 dark:text-white">{GISUBIZO_PHONE}</p>
           </div>
           <a
             href={`https://wa.me/${GISUBIZO_WHATSAPP}?text=Muraho Gisubizo Ltd! Ndashaka amakuru y'ibikorwa byanyu.`}
@@ -54,13 +54,13 @@ const ContactModal = ({ onClose }) => (
           </a>
         </div>
 
-        <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
-          <div className="w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+        <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-xl">
+          <div className="w-9 h-9 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0">
             <FiMail size={16} className="text-blue-600" />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-xs text-gray-500">Email</p>
-            <p className="font-semibold text-gray-800 text-xs truncate">{GISUBIZO_EMAIL}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">Email</p>
+            <p className="font-semibold text-gray-800 dark:text-white text-xs truncate">{GISUBIZO_EMAIL}</p>
           </div>
           <a href={`mailto:${GISUBIZO_EMAIL}`} className="ml-auto bg-blue-500 text-white text-xs px-3 py-1.5 rounded-lg hover:bg-blue-600 transition font-medium flex-shrink-0">
             Email
@@ -68,7 +68,7 @@ const ContactModal = ({ onClose }) => (
         </div>
       </div>
 
-      <button onClick={onClose} className="w-full py-2.5 border border-gray-200 rounded-xl text-gray-500 text-sm hover:bg-gray-50 transition">
+      <button onClick={onClose} className="w-full py-2.5 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-500 dark:text-gray-400 text-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition">
         Funga
       </button>
     </div>

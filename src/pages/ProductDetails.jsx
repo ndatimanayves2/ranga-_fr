@@ -36,18 +36,18 @@ const LoginPrompt = ({ onClose }) => {
   const navigate = useNavigate();
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4" onClick={onClose}>
-      <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-sm w-full" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 max-w-sm w-full" onClick={(e) => e.stopPropagation()}>
         <div className="text-center mb-5">
-          <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <div className="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
             <FiLock size={28} className="text-yellow-600" />
           </div>
-          <h3 className="text-xl font-bold text-gray-800">Injira Mbere!</h3>
-          <p className="text-sm text-gray-500 mt-2 leading-relaxed">
+          <h3 className="text-xl font-bold text-gray-800 dark:text-white">Injira Mbere!</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">
             Ugomba gukora <strong>Login</strong> kugirango ubashe kubona nimero ya seller no kumuvugisha.
           </p>
         </div>
         <div className="flex gap-3">
-          <button onClick={onClose} className="flex-1 py-3 border border-gray-300 rounded-xl text-gray-600 text-sm font-medium hover:bg-gray-50 transition">
+          <button onClick={onClose} className="flex-1 py-3 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-600 dark:text-gray-300 text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition">
             Funga
           </button>
           <button
@@ -57,7 +57,7 @@ const LoginPrompt = ({ onClose }) => {
             🔐 Injira / Login
           </button>
         </div>
-        <p className="text-center text-xs text-gray-400 mt-3">
+        <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-3">
           Nta konti ufite?{" "}
           <button onClick={() => { onClose(); navigate("/register"); }} className="text-yellow-600 font-semibold hover:underline">
             Iyandikishe
